@@ -51,7 +51,7 @@ URL = "https://github.com/jordyril/API_CLIENTS"
 # versioning
 MAJOR = 1
 MINOR = 0
-MICRO = 0
+MICRO = 1
 ISRELEASED = False
 VERSION = "%d.%d.%d" % (MAJOR, MINOR, MICRO)
 
@@ -62,14 +62,14 @@ write_version = True
 # FULLVERSION += '.dev'
 
 
-DEPENDENCIES = []
+# DEPENDENCIES = []
 
 # with open("requirements.txt", "r", encoding="utf-8") as requirements:
 #     for line in requirements:
 #         DEPENDENCIES.append(line.split("==")[0].strip())
 #         # DEPENDENCIES.append(line.strip())
 
-DEPENDENCIES += ["musicbrainzngs", "nltk", "requests", "urllib", "pandas", "re", "os", "base64", "datetime"]
+# DEPENDENCIES += ["musicbrainzngs", "nltk", "requests", "urllib", "pandas", "re", "os", "base64", "datetime"]
 
 setuptools.setup(
     name=DISTNAME,
@@ -78,7 +78,7 @@ setuptools.setup(
     author_email=EMAIL,
     maintainer=AUTHOR,
     maintainer_email=EMAIL,
-    install_requires=DEPENDENCIES,
+    # install_requires=DEPENDENCIES,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     url=URL,

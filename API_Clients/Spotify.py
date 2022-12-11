@@ -129,7 +129,8 @@ class Track(object):
         name = re.sub(" - .*", "", name).strip()
         name = re.sub("\(feat. .*\)", "", name).strip()
         for item in self._clean_name_list:
-            name = re.sub(item, "", name).strip()
+            name = name.replace(item, "").strip()
+
         return name
 
 
