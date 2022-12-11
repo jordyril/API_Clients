@@ -121,12 +121,13 @@ class Track(object):
     def __eq__(self, right):
         return (self.name == right.name) and (self.artists == right.artists)
 
-    _clean_name_list = ["remastered","Remastered", "radio edit", "Radio edit", "Radio Edit", "Single version", "Single Version","Remastered Version", "Soundtrack", "Remaster", "Version Revisited"]
+    _clean_name_list = ["remastered","Remastered", "radio edit", "Radio edit", "Radio Edit", "Single version", "Single Version","Remastered Version", "Soundtrack", "Remaster", "Version Revisited", "!", "?"]
 
     def _verify_clean_name(self, name):
         name = name.capitalize()
         name = re.sub("\[.*?\]", "", name).strip()
         name = re.sub(" - .*", "", name).strip()
+        name = re.sub("\(feat. .*\)", "", name).strip()
         for item in self._clean_name_list:
             name = re.sub(item, "", name).strip()
         return name
