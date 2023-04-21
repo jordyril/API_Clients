@@ -9,10 +9,12 @@ class QRCreator(object):
 
     root = "https://api.qrserver.com/v1/create-qr-code"
 
-    def __init__(self, save_folder="qrcodes/"):
+    def __init__(self, save_folder: str = "qrcodes/") -> None:
         self.save_folder = save_folder
 
-    def create_qrcode(self, link, savename, format="svg", **kwargs):
+    def create_qrcode(
+        self, link: str, savename: str, format: str = "svg", **kwargs
+    ) -> None:
         """
         possible kwargs:
         size = "intxint" ("3000x3000")
