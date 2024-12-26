@@ -15,10 +15,14 @@ class MusicBrainzObject(object):
     mb_data_str: Optional[str] = None
 
     def __init__(
-        self, entity: str, name: str = None, id: Optional[Union[str, int]] = None
+        self,
+        entity: str,
+        name: Optional[str] = None,
+        id: Optional[Union[str, int]] = None,
     ) -> None:
         if (id is None) and (name is None):
             raise Exception("Both name and ID cannot be empty")
+
         self.entity = entity
         self.name = name
         self.id = id
@@ -47,7 +51,7 @@ class MusicBrainzObject(object):
         return f"{self.entity.capitalize()}: {self.name}"
 
     def _distance_check(
-        self, data_list: List[str], reference: str, item_name: Optional(str) = "name"
+        self, data_list: List[str], reference: str, item_name: Optional[str] = "name"
     ):
         closest = (None, 10**10)
         for item in data_list:
